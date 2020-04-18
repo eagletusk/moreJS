@@ -262,16 +262,43 @@
 // removeFromBackOfNew([1,2,3])
 
 
-function getIndexOf(char, str) {
-  // your code here
-  console.log(str.indexOf(char))
-  var i=0;
-  for (i; i < str.length ; i++){
-    if (str[i] === char){
-      return i;
-    }
+// function getIndexOf(char, str) {
+//   // your code here
+//   console.log(str.indexOf(char))
+//   var i=0;
+//   for (i; i < str.length ; i++){
+//     if (str[i] === char){
+//       return i;
+//     }
   
+//   }return -1; 
+// }
+
+// getIndexOf('c','abc'); 
+
+
+function binarySearch(arr, v){
+  let l = 0;
+  let r = arr.length -1; 
+
+  while (l<=r){
+    let mid = Math.floor((r+l)/2);
+    if (arr[mid]===v) {
+      console.log(mid);
+      return mid;
+    }
+    if(arr[mid]>v){
+      // value is on the left
+      r = mid -1; 
+    }
+    if (arr[mid]<v){
+      //value is on the right
+      l = mid+1; 
+    }
   }return -1; 
 }
 
-getIndexOf('c','abc'); 
+binarySearch([1,2,3], 4)
+binarySearch([1,2,3], 1)
+binarySearch([1,2,3], 2)
+binarySearch([1,2,3], 3)
