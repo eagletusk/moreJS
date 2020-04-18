@@ -71,29 +71,67 @@
 // console.log(pair); // --> [4, 5]
 
 
-function findPairForSum(arr,num){
-  let result = [];
-  let found = false; 
-  // nested loops then break
-  for (let i =0; i<arr.length; i++){
-    for (let j=1; j<arr.length-1; j++){
-      if (found === false)
-      console.log(arr[i]+" "+arr[j])
-      console.log (arr[i]+arr[j]);
-      let sum = arr[i] + arr[j];
-      if (sum === num){
-        result[0] = arr[i];
-        result[1] = arr[j];
-        found = true; 
-      }
-    }
-  }
+// function findPairForSum(arr,num){
+//   let result = [];
+//   let found = false; 
+//   // nested loops then break
+//   for (let i =0; i<arr.length; i++){
+//     for (let j=1; j<arr.length-1; j++){
+//       if (found === false)
+//       console.log(arr[i]+" "+arr[j])
+//       console.log (arr[i]+arr[j]);
+//       let sum = arr[i] + arr[j];
+//       if (sum === num){
+//         result[0] = arr[i];
+//         result[1] = arr[j];
+//         found = true; 
+//       }
+//     }
+//   }
 
   // if sum = num then a pair has been found, push both to a result array
 
   // return result array
-  return result; 
+//   return result; 
+// }
+
+// var pair = findPairForSum([0, 34, 4, 12, 5, 2], 9);
+// console.log(pair); // --> [4, 5]
+
+
+// Is one string a rotated version of another?
+
+// For example:
+// String 1: 'hello world'
+// String 2: 'orldhello w'
+
+// If you double the string, you'll be to trivially find another string inside it using regular String methods.
+
+// Doubled string: 'hello worldhello world'
+// Search w/in it: '       orldhello w    '
+
+function rotatePair(str1,str2) {
+  let doubled = str1.concat(str1);
+  let location = [];
+  let count =0
+
+  for (let i=0; i<doubled.length; i++){
+    for (let j=0; j<str2.length; j++){
+      if(str2[i]===doubled[j]){
+        count ++ ;
+       // console.log(count) 
+      }
+    }
+  }
+  if (count === str2.length){
+    return true; 
+    //console.log ('true');
+  }else {
+    return false; 
+   // console.log ('false');
+  }
+
+
 }
 
-var pair = findPairForSum([0, 34, 4, 12, 5, 2], 9);
-console.log(pair); // --> [4, 5]
+rotatePair('abcd','bcda');
