@@ -63,39 +63,37 @@
 // console.log(output); 
 
 
+// Given a list of non-negative integers and a target sum, find a pair of numbers that sums to the target sum.
 
-function transposeTwoStrings(array){
-//H W/n 
-//word A bigger than word b and opposite add spaces
-  let word1 = array[0];
-  let word2 = array[1];
+// Example:
+
+// var pair = findPairForSum([3, 34, 4, 12, 5, 2], 9);
+// console.log(pair); // --> [4, 5]
+
+
+function findPairForSum(arr,num){
   let result = [];
-  let lengthDiff = (word1.length - word2.length);
-
-    // if length diff is posative then add spaces
-  if(lengthDiff >0 ){
-    for (let a=0; a<lengthDiff; a++) {
-      word2 = word2.concat(' '); 
+  let found = false; 
+  // nested loops then break
+  for (let i =0; i<arr.length; i++){
+    for (let j=1; j<arr.length-1; j++){
+      if (found === false)
+      console.log(arr[i]+" "+arr[j])
+      console.log (arr[i]+arr[j]);
+      let sum = arr[i] + arr[j];
+      if (sum === num){
+        result[0] = arr[i];
+        result[1] = arr[j];
+        found = true; 
       }
-  }else if (lengthDiff<0){
-     for (let a=0; a>lengthDiff; a--)  {
-      word1 = word1.concat(' '); 
-      }
-  }
-  //console.log(lengthDiff + " " +word1 + word2);
-
-  for (let i = 0; i<word1.length; i++){
-    result.push(word1[i] + ' ' + word2[i] + '\n');
+    }
   }
 
-  // if lenght diff is negative then add space to word2
+  // if sum = num then a pair has been found, push both to a result array
 
-
-  //loop join
- //console.log(result)
-
- return result.join('');
+  // return result array
+  return result; 
 }
 
-transposeTwoStrings(['Hello ','World   ']);
-
+var pair = findPairForSum([0, 34, 4, 12, 5, 2], 9);
+console.log(pair); // --> [4, 5]
