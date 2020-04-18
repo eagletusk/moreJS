@@ -252,13 +252,26 @@
 // console.log (abc.charAt(2))
 
 
-function removeFromBackOfNew(arr) {
+// function removeFromBackOfNew(arr) {
+//   // your code here
+//   let abc = arr.slice(1,2);
+//   console.log(abc)
+//   return abc;
+// }
+
+// removeFromBackOfNew([1,2,3])
+
+
+function getIndexOf(char, str) {
   // your code here
-  let abc = arr.slice(1,2);
-  console.log(abc)
-  return abc;
+  console.log(str.indexOf(char))
+  var i=0;
+  for (i; i < str.length ; i++){
+    if (str[i] === char){
+      return i;
+    }
+  
+  }return -1; 
 }
 
-removeFromBackOfNew([1,2,3])
-
-
+getIndexOf('c','abc'); 
