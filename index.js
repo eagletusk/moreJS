@@ -192,28 +192,48 @@
 // Skeleton
 
 
-// FUNCTION DEFINITION(S)
-function average(n){
-  let avg = sums(n)/n.length; 
-  console.log(avg);
-  return avg; 
-}
+// // FUNCTION DEFINITION(S)
+// function average(n){
+//   let avg = sums(n)/n.length; 
+//   console.log(avg);
+//   return avg; 
+// }
 
-function sums(numbers) {
-  // returns the sum of an array of numbers
-  let sum = 0; 
-    for (let i = 0; i<numbers.length; i++){
-      sum += numbers[i];
-  } console.log(sum);
-  return sum;
-}
+// function sums(numbers) {
+//   // returns the sum of an array of numbers
+//   let sum = 0; 
+//     for (let i = 0; i<numbers.length; i++){
+//       sum += numbers[i];
+//   } console.log(sum);
+//   return sum;
+// }
 
-function assertEqual (a,b){
-  if (a===b) return console.log('true');
-    else return console.log('false')
+// function assertEqual (a,b){
+//   if (a===b) return console.log('true');
+//     else return console.log('false')
     
+// }
+
+// // ASSERTION FUNCTION(S) TO BE USED
+// assertEqual(average([1,2]), 1.5)// TESTS CASES
+// assertEqual(average([1,2]), 1.6)// TESTS CASES
+
+// Skeleton
+
+// FUNCTION DEFINITION(S)
+function isIsogram(text) {
+  // add each char to a set
+  let check = new Set(); 
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
+  // note: a set drops dup values
+  for (let i=0; i<text.length; i++){
+    check.add(text[i].toLowerCase());
+  }
+  if(check.size === text.length) return true; 
+  // thus, to see if all the chars were unique,
+  // check length of text and the size of the set
+  return false;
 }
 
+isIsogram('sdf')
 // ASSERTION FUNCTION(S) TO BE USED
-assertEqual(average([1,2]), 1.5)// TESTS CASES
-assertEqual(average([1,2]), 1.6)// TESTS CASES
