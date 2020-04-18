@@ -158,32 +158,62 @@
 // * If you don't find the value, you can return null.
 // * If at any point you calculate the index of the midpoint and get a fractional number, just round it down ("floor" it).
 
-function binarySearch(arr,a){
-  let l = 0;
-  let r = arr.length-1; 
+// function binarySearch(arr,a){
+//   let l = 0;
+//   let r = arr.length-1; 
  
-  while(l<=r){
-    let mid = Math.floor((l+r)/2); 
-    if (arr[mid]===a) {
-        return true;
-      }
-    if (arr[mid]>a){
-      // value is on the left
-      r = mid-1; 
-    }
-    if (arr[mid]<a){
-      //value is on the right
-      l = mid+1;
-    }
-  }
-  return false; 
+//   while(l<=r){
+//     let mid = Math.floor((l+r)/2); 
+//     if (arr[mid]===a) {
+//         return true;
+//       }
+//     if (arr[mid]>a){
+//       // value is on the left
+//       r = mid-1; 
+//     }
+//     if (arr[mid]<a){
+//       //value is on the right
+//       l = mid+1;
+//     }
+//   }
+//   return false; 
+// }
+
+// let answer = binarySearch([1,4,4,6,7,8,9], 9);
+// console.log(answer);
+// answer = binarySearch([1,4,4,6,7,8,9], 1);
+// console.log(answer);
+// answer = binarySearch([1,4,4,6,7,8,9], 6);
+// console.log(answer);
+// answer = binarySearch([1,4,4,6,7,8,9], 5);
+// console.log(answer);
+
+
+// Skeleton
+
+
+// FUNCTION DEFINITION(S)
+function average(n){
+  let avg = sums(n)/n.length; 
+  console.log(avg);
+  return avg; 
 }
 
-let answer = binarySearch([1,4,4,6,7,8,9], 9);
-console.log(answer);
-answer = binarySearch([1,4,4,6,7,8,9], 1);
-console.log(answer);
-answer = binarySearch([1,4,4,6,7,8,9], 6);
-console.log(answer);
-answer = binarySearch([1,4,4,6,7,8,9], 5);
-console.log(answer);
+function sums(numbers) {
+  // returns the sum of an array of numbers
+  let sum = 0; 
+    for (let i = 0; i<numbers.length; i++){
+      sum += numbers[i];
+  } console.log(sum);
+  return sum;
+}
+
+function assertEqual (a,b){
+  if (a===b) return console.log('true');
+    else return console.log('false')
+    
+}
+
+// ASSERTION FUNCTION(S) TO BE USED
+assertEqual(average([1,2]), 1.5)// TESTS CASES
+assertEqual(average([1,2]), 1.6)// TESTS CASES
