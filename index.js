@@ -239,14 +239,26 @@
 // // ASSERTION FUNCTION(S) TO BE USED
 
 
-function getElementsAfter(array, n) {
+// function getElementsAfter(array, n) {
+//   // your code here
+//   abc = array.slice(n+1);
+//   console.log(array)
+//   return abc; 
+// }
+
+// getElementsAfter(['a','b','c','d','e'],2);
+
+// abc = 'sdk'
+// console.log (abc.charAt(2))
+
+
+function removeFromBackOfNew(arr) {
   // your code here
-  abc = array.slice(n+1);
-  console.log(array)
-  return abc; 
+  let abc = arr.slice(1,2);
+  console.log(abc)
+  return abc;
 }
 
-getElementsAfter(['a','b','c','d','e'],2);
+removeFromBackOfNew([1,2,3])
 
-abc = 'sdk'
-console.log (abc.charAt(2))
+
