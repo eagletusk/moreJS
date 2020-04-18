@@ -110,28 +110,80 @@
 // Doubled string: 'hello worldhello world'
 // Search w/in it: '       orldhello w    '
 
-function rotatePair(str1,str2) {
-  let doubled = str1.concat(str1);
-  let location = [];
-  let count =0
+// function rotatePair(str1,str2) {
+//   let doubled = str1.concat(str1);
+//   let location = [];
+//   let count =0
 
-  for (let i=0; i<doubled.length; i++){
-    for (let j=0; j<str2.length; j++){
-      if(str2[i]===doubled[j]){
-        count ++ ;
-       // console.log(count) 
+//   for (let i=0; i<doubled.length; i++){
+//     for (let j=0; j<str2.length; j++){
+//       if(str2[i]===doubled[j]){
+//         count ++ ;
+//        // console.log(count) 
+//       }
+//     }
+//   }
+//   if (count === str2.length){
+//     return true; 
+//     //console.log ('true');
+//   }else {
+//     return false; 
+//    // console.log ('false');
+//   }
+
+
+// }
+
+// rotatePair('abcd','bcda');
+
+
+// Binary search is a technique for very rapidly searching a sorted collection by cutting the search space in half at every pass.
+
+// Given a sorted array, such as this:
+// [1, 3, 16, 22, 31, 33, 34]
+
+// You can search for the value 31, as follows:
+
+// 1) Pick the midpoint: 22.
+// 2) The value is higher than 22, so now consider only the right half of the previous array:
+// [...31, 33, 34]
+// 3) Pick the midpoint: 33
+// 4) The value is lower than 33, so now consider only the left half of the previous array:
+// [...31...]
+// 5) Pick the midpoint: 31
+// 6) You've hit the value.
+// 7) Return the index of the value.
+
+// Notes:
+// * If you don't find the value, you can return null.
+// * If at any point you calculate the index of the midpoint and get a fractional number, just round it down ("floor" it).
+
+function binarySearch(arr,a){
+  let l = 0;
+  let r = arr.length-1; 
+ 
+  while(l<=r){
+    let mid = Math.floor((l+r)/2); 
+    if (arr[mid]===a) {
+        return true;
       }
+    if (arr[mid]>a){
+      // value is on the left
+      r = mid-1; 
+    }
+    if (arr[mid]<a){
+      //value is on the right
+      l = mid+1;
     }
   }
-  if (count === str2.length){
-    return true; 
-    //console.log ('true');
-  }else {
-    return false; 
-   // console.log ('false');
-  }
-
-
+  return false; 
 }
 
-rotatePair('abcd','bcda');
+let answer = binarySearch([1,4,4,6,7,8,9], 9);
+console.log(answer);
+answer = binarySearch([1,4,4,6,7,8,9], 1);
+console.log(answer);
+answer = binarySearch([1,4,4,6,7,8,9], 6);
+console.log(answer);
+answer = binarySearch([1,4,4,6,7,8,9], 5);
+console.log(answer);
