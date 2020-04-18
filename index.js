@@ -220,20 +220,33 @@
 
 // Skeleton
 
-// FUNCTION DEFINITION(S)
-function isIsogram(text) {
-  // add each char to a set
-  let check = new Set(); 
-  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
-  // note: a set drops dup values
-  for (let i=0; i<text.length; i++){
-    check.add(text[i].toLowerCase());
-  }
-  if(check.size === text.length) return true; 
-  // thus, to see if all the chars were unique,
-  // check length of text and the size of the set
-  return false;
+// // FUNCTION DEFINITION(S)
+// function isIsogram(text) {
+//   // add each char to a set
+//   let check = new Set(); 
+//   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
+//   // note: a set drops dup values
+//   for (let i=0; i<text.length; i++){
+//     check.add(text[i].toLowerCase());
+//   }
+//   if(check.size === text.length) return true; 
+//   // thus, to see if all the chars were unique,
+//   // check length of text and the size of the set
+//   return false;
+// }
+
+// isIsogram('sdf')
+// // ASSERTION FUNCTION(S) TO BE USED
+
+
+function getElementsAfter(array, n) {
+  // your code here
+  abc = array.slice(n+1);
+  console.log(array)
+  return abc; 
 }
 
-isIsogram('sdf')
-// ASSERTION FUNCTION(S) TO BE USED
+getElementsAfter(['a','b','c','d','e'],2);
+
+abc = 'sdk'
+console.log (abc.charAt(2))
